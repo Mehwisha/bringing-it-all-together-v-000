@@ -2,11 +2,12 @@ class Dog
 
 attr_accessor :id, :name, :breed
 
-def attributes
-@id = id
-@name = name
-@breed = breed
-end
+def initialize(attributes)
+  attributes.each {|key, value| self.send(("#{key}="), value)}
+      self.id ||= nil
+    end
+
+
 
 
 end
